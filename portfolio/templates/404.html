@@ -1,0 +1,10 @@
+{% extends "base.html" %}
+{% set profile = {"name": "Praneeth Reddy Kadavakolla"} %}
+{% block title %}{{ "Server error" if server_error else "Not found" }}{% endblock %}
+{% block body %}
+<main class="wrap lost">
+  <h1>{{ "Something broke" if server_error else "Page not found" }}</h1>
+  <p class="lede">{{ "Please try again in a moment." if server_error else "That page does not exist." }}</p>
+  <a class="btn fill" href="{{ url_for('web.index') }}">Back to the portfolio</a>
+</main>
+{% endblock %}
